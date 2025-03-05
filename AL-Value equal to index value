@@ -1,12 +1,13 @@
-package javapackage;
 
-public class FirstJavaProgram {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("This is my first java selenium");
-		System.out.println();
-
-	}
-
+class Solution {
+    public List<Integer> valueEqualToIndex(List<Integer> nums) {
+        // code here
+        List<Integer> l=new ArrayList<>();
+        for(int i=0;i<nums.size();i++){
+            if(nums.get(i)==i+1)
+            l.add(i+1);
+        }
+        return l;
+    }
 }
+
