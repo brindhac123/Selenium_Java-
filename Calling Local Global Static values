@@ -1,0 +1,20 @@
+package javapackage;
+
+public class SixThree {
+	//global variable
+	int b=30;
+	static int c=50;
+public static void main(String[] args) {
+	//Initialing, declaring,calling
+	int n,a=10;
+	SixThree st=new SixThree();
+	
+	System.out.println(a+" "+c+" "+st.b+" ");
+	newmethod();
+	
+}
+public static void newmethod() {
+	int d=100;
+	System.out.println(d);
+}
+}
