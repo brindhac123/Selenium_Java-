@@ -1,0 +1,7 @@
+class Solution {
+
+    String modify(String s) {
+        // your code here
+        return s.replaceAll("\\s+","");
+    }
+}
