@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class CommonFactorsOptimized {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+        int b = s.nextInt();
+        s.close();
+
+        // Handle edge cases where one of the numbers is 0
+        if (a == 0 || b == 0) {
+            System.out.println(0);
+            return;
+        }
+
+        // Compute the GCD of a and b
+        int gcd = findGCD(a, b);
+        int count = 0;
+
+        // Count the number of divisors of the GCD
+        for (int i = 1; i * i <= gcd; i++) {
+            if (gcd % i == 0) {
+                count++; // i is a factor
+                if (i != gcd / i) {
+                    count++; // gcd / i is also a factor
+                }
+            }
+        }
+
+        System.out.println(count);
+    }
+
+    // Function to compute GCD using the Euclidean algorithm
+    public static int findGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return Math.abs(a); // Ensure it's positive
+    }
+}
