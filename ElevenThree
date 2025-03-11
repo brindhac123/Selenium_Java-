@@ -1,0 +1,20 @@
+package javapackage;
+
+public class ElevenThree {
+	//without main I am going to run the program
+	int a;
+	static int b;
+	public void check() {
+		System.out.println(a);
+	}
+	//checking without assigning any value wha will be the outpu
+	public static void main(String[] args) {
+		int c = 0;
+		System.out.println(c);
+		ElevenThree et=new ElevenThree();
+		System.out.println(et.a);
+		System.out.println(et.b);
+		System.out.println(b);
+
+	}
+}
