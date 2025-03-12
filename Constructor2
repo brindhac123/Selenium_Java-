@@ -1,0 +1,15 @@
+package javapackage;
+
+public class Constructor2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Constructor1 c1=new Constructor1(1,"Brindha");
+Constructor1 c2=new Constructor1(2,"Paiksith");
+Constructor1 c3=new Constructor1(3,"Velu");
+c1.display();
+c2.display();
+c3.display();
+	}
+
+}
