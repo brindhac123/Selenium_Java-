@@ -1,0 +1,16 @@
+package javapackage;
+
+public class Constructor1 {
+	int rollno;
+	String name;
+	static String clg = "NEC";
+
+	Constructor1(int r, String n){
+		rollno=r;
+		name=n;
+	}
+	public void display() {
+		System.out.println(rollno+" "+name+" "+clg+" ");
+	}
+
+}
