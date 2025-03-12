@@ -1,0 +1,22 @@
+package javapackage;
+
+public class Constructor3 {
+	static int z=1;
+	public static void a1() {
+		//z=10;
+		System.out.println(z);
+	}
+	public void b() {
+		//z=50;
+		//System.out.println(z);
+	}
+	
+	public static void main(String[] args) {
+		
+		a1();
+		Constructor3 c3=new Constructor3();
+		c3.b();
+		System.out.println(c3.z);
+	}
+
+}
