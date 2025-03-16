@@ -1,0 +1,18 @@
+package javapac;
+import java.util.Scanner;
+public class ReverseNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int mod,rev=0;
+		while(n>0) {
+			mod=n%10;
+			rev=mod+(rev*10);
+			n/=10;
+		}
+		System.out.println(rev);
+	}
+
+}
