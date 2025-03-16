@@ -1,0 +1,24 @@
+package javapac;
+import java.util.Scanner;
+public class PerfectNumberGivenRage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int j,sum;
+		for(int i=1; i<=n;i++) {
+			j=1;
+			sum=0;
+			while(j<=i/2) {
+				if(i%j==0)
+					sum+=j;
+				j++;
+			}
+			if(sum==i)
+				System.out.println(i);
+		}
+
+	}
+
+}
