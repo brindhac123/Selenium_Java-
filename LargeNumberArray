@@ -1,0 +1,20 @@
+package javapac;
+import java.util.Arrays;
+public class LargeNumberArray {
+	static int arr[]= {1,3,2,5,9,4,7};
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int res=largenum(arr);
+		System.out.println(res);
+	}
+	static int largenum(int[] arr) {
+		int max=arr[0];
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]>max)
+				max=arr[i];
+		}
+		return max;
+	}
+
+}
