@@ -1,0 +1,21 @@
+package javapac;
+import java.util.*;
+public class ArmStrong {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int temp=n,mod,sum=0;
+		while(n>0)
+		{
+			mod=n%10;
+			sum+=(mod*mod*mod);
+			n/=10;
+		}
+		//if(temp==sum)
+			System.out.println(temp==sum ?"armstrong":"not armstrong");
+
+	}
+
+}
