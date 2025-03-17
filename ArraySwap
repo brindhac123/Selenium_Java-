@@ -1,0 +1,27 @@
+package javapac;
+import java.util.*;
+public class ArraySwap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+int a[]=new int[10],b[]=new int[10],c[]=new int[10];
+for(int i=0;i<10;i++) {
+	a[i]=sc.nextInt();
+}
+for(int i=0;i<10;i++) {
+	b[i]=sc.nextInt();
+}
+for(int i=0;i<10;i++) {
+	c[i]=a[i];
+	a[i]=b[i];
+	b[i]=c[i];
+}
+for(int i=0;i<10;i++) {
+	System.out.println(a[i]);
+}
+for(int i=0;i<10;i++) {
+	System.out.println(b[i]);
+}	}
+
+}
