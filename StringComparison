@@ -1,0 +1,16 @@
+package javapac;
+import java.util.*;
+public class StringComparison {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	String s1=sc.nextLine();
+	String s2=sc.nextLine();
+	if(s1.compareTo(s2)>0) 
+		System.out.println("S1 is greater"+s1.compareTo(s2));
+	else if(s1.compareTo(s2)<0)
+		System.out.println("S2 is greater"+s1.compareTo(s2));
+	else
+		System.out.println("Equal"+s1.compareTo(s2));
+	
+}
+}
