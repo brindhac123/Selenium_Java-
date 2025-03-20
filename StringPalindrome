@@ -1,0 +1,22 @@
+
+package javapac;
+import java.util.*;
+public class StringPalindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine(),reverse="",ori=s;
+		for(int i=s.length()-1;i>=0;i--) {
+			reverse+=s.charAt(i);
+		}
+		if(ori.equals(reverse))
+		System.out.println("Palindrome");
+		else
+			System.out.println("Not an Palindrome");
+
+
+	}
+
+}
+
