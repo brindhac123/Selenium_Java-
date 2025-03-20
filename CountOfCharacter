@@ -1,0 +1,22 @@
+package javapac;
+import java.util.*;
+public class CountOfCharacter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="testimonials";
+		HashMap<Character,Integer> map=new HashMap<Character,Integer>();
+		char a[]=s.toCharArray();
+		for(char c:a) {
+			if(map.containsKey(c)) {
+				int x=map.get(c);
+				map.put(c,x+1);
+			}
+			else {
+				map.put(c, 1);
+			}
+		}System.out.println(map);
+
+	}
+
+}
