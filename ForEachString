@@ -1,0 +1,14 @@
+package javapac;
+import java.util.*;
+public class ForEachString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="Brindha Cracks the 3 interview and get the 12 LPA before May ends";
+		for(char c:s.toCharArray()) {
+			System.out.println(c);
+		}
+
+	}
+
+}
