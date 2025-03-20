@@ -1,0 +1,16 @@
+class Solution
+{
+    // complete the function
+    public static int sumOfDigits(int n)
+    {
+        // add your code here
+     int mod,rev=0;
+		while(n>0) {
+			mod=n%10;
+			rev=rev+mod;
+			n/=10;
+		}
+		return rev;
+        
+    }
+}
