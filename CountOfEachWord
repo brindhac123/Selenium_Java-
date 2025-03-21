@@ -1,0 +1,21 @@
+package javapac;
+import java.util.*;
+public class CountOfEachWord {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="Hello I am Brindha Got 2 remote job in statrtup";
+		String sh[]=s.split(" ");
+		HashMap<String,Integer> emp=new HashMap<String,Integer>();
+		for(String s1:sh) {
+			if(emp.containsKey(s1)) {
+				int x=emp.get(s1);
+				emp.put(s1, x+1);
+			}
+			else
+				emp.put(s1, 1);
+		}
+		System.out.println(emp);
+	}
+
+}
