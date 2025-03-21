@@ -1,0 +1,16 @@
+class Solution {
+    static int dataTypeSize(String str) {
+        // code here// your code here
+        if(str.equals("Character"))
+        return Character.BYTES;
+        else if(str.equals("Integer"))
+        return Integer.BYTES;
+        else if(str.equals("Long"))
+        return Long.BYTES;
+        else if(str.equals("Float"))
+        return Float.BYTES;
+        else if(str.equals("Double"))
+        return Double.BYTES;
+        return -1;
+    }
+}
