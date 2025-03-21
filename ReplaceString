@@ -1,0 +1,12 @@
+package javapac;
+
+public class ReplaceString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="br,in,dha, c";
+		s=s.replace(",", "");
+		System.out.println(s);
+	}
+
+}
