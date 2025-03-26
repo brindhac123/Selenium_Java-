@@ -1,0 +1,16 @@
+class Solution {
+    static String removeChars(String str1, String str2) {
+        // code here
+        HashSet<Character> ans=new HashSet<>();
+        for(char c1:str2.toCharArray()){
+            ans.add(c1);
+        }
+        StringBuilder rev= new StringBuilder();
+        for(char c2: str1.toCharArray()){
+            if(!ans.contains(c2))
+            rev.append(c2);
+        }
+        return rev.toString();
+        
+    }
+}
