@@ -1,0 +1,14 @@
+
+class Solution {
+    String firstAlphabet(String S) {
+        // code 
+        StringBuilder sb=new StringBuilder();
+        String s[]=S.split(" ");
+        for(String str:s){
+            if(!str.isEmpty()){
+                sb.append(str.charAt(0));
+            }
+        }
+        return sb.toString();
+    }
+};
