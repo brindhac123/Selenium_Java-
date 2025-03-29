@@ -1,0 +1,27 @@
+package javapac;
+import java.util.*;
+public class StringWordReverse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		//int n=sc.nextInt();
+		String s=sc.nextLine();
+		String arr[]=s.split(" ");
+		String reverse="";
+		for(String tr:arr) {
+			reverse="";
+			for(int j=tr.length()-1;j>=0;j--) {
+				reverse+=tr.charAt(j);
+			}
+			System.out.print(reverse+" ");
+		}
+		for(String word:arr) {
+			StringBuilder sb = new StringBuilder(word);
+			System.out.print(sb.reverse()+" ");
+		}
+
+	}
+
+}
+
