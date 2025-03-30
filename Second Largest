@@ -1,0 +1,19 @@
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // Code Here
+        int first=Integer.MIN_VALUE, second=Integer.MAX_VALUE;
+        if(arr.length<2) {
+        return -1;}
+        for(int value:arr){
+            if(value>first){
+                second =first;
+                first=value;
+            }
+            else if(value > second && value <first){
+                second =value;
+            }
+            
+        }
+        return (second==Integer.MIN_VALUE) ? -1:second;
+    }
+}
