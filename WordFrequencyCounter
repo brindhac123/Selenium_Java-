@@ -1,0 +1,20 @@
+package javapac;
+import java.util.*;
+public class WordFrequencyCounter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int co=0;
+		String s=sc.nextLine().trim(),s1=sc.nextLine().trim();
+		String arr[]=s.split(" ");
+		for(String k:arr) {
+			if(k.equalsIgnoreCase(s1)) {
+				co+=1;
+			}
+		}
+		System.out.println(co);
+		
+	}
+
+}
