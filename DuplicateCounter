@@ -1,0 +1,26 @@
+package javapac;
+import java.util.*;
+public class DuplicateCounter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int a[]=new int[n];
+		
+		for(int i=0;i<n;i++) {
+			a[i]=sc.nextInt();
+		}
+		HashSet<Integer> seen=new HashSet<>();
+		HashSet<Integer> dup=new HashSet<>();
+		for(int k:a) {
+			if(seen.contains(k))
+				dup.add(k);
+			else
+				seen.add(k);
+			
+		}
+System.out.println(dup.size());;
+	}
+
+}
