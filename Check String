@@ -1,0 +1,16 @@
+
+class Sol
+{
+    Boolean check (String s)
+    {
+        // your code here  
+        boolean res=true;
+        for(int i=1;i<s.length();i++){
+            if(s.charAt(i)!=s.charAt(0)){
+            res=false;
+            break;
+            }
+        }
+        return res;
+    }
+}
