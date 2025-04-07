@@ -1,0 +1,28 @@
+package javapac;
+
+public class MultiClass {
+	
+	MultiClass(){
+		System.out.println("constructor called");
+	}
+	void computer() {
+		System.out.println("computer class");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MultiClass mc=new MultiClass();
+		mc.computer();
+		laptop lp=new laptop();
+		lp.lap();
+	}
+
+}
+class laptop{
+	void lap() {
+		System.out.println("laptop class");
+	}
+	laptop(){
+		System.out.println("cons laptop");
+	}
+}
