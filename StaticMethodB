@@ -1,0 +1,15 @@
+package javapac;
+
+public class StaticMethodB {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("main method called");
+	}
+	static {
+		String os=System.getenv("OS");
+		if(!os.equals("Windows_NT"))
+			System.exit(1);
+	}
+
+}
