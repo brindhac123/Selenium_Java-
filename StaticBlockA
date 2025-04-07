@@ -1,0 +1,13 @@
+package javapac;
+
+public class StaticBlockA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.out.println("Main method is called");
+	}
+	static {
+		System.out.println("Static method called before main method");
+	}
+
+}
