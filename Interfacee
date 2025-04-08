@@ -1,0 +1,20 @@
+package javapac;
+interface Abc{
+	final int a=10;
+	void test();
+}
+public class Interfacee implements Abc {
+
+	public void test() {
+		System.out.println("Testing interface");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Interfacee i=new Interfacee();
+		i.test();
+		System.out.println(a);
+		System.out.println(Abc.a);
+		
+	}
+
+}
