@@ -1,0 +1,23 @@
+package javapac;
+import java.util.*;
+public class ExceptionFinally {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+int	b=sc.nextInt();
+try {
+	int res=a/b;
+	System.out.println("result"+res);
+}
+catch(ArithmeticException e) {
+	System.out.println("Exception"+e);
+}
+finally{
+	System.out.println("COde executed successfully");
+}
+
+	}
+
+}
