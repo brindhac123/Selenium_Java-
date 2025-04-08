@@ -1,0 +1,16 @@
+package javapac;
+
+public class ThrowException {
+
+	public static void main(String[] args) throws ArrayIndexOutOfBoundsException {
+		// TODO Auto-generated method stub
+		int a[]= {1,2,3};
+		int indexz=10;
+		if(indexz>a.length) {
+			throw new ArrayIndexOutOfBoundsException("ArrayIndexOutOfBoundsException ");
+		}
+		else System.out.println("element present");
+
+	}
+
+}
