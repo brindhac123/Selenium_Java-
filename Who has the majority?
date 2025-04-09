@@ -1,0 +1,20 @@
+class Solution {
+    // Function to find element with more appearances between two elements in an
+    // array.
+    public int majorityWins(int arr[], int n, int x, int y) {
+        // code here
+        int c1=0,c2=0;
+        for(int val:arr){
+            if(val==x)
+            c1+=1;
+            else if(val==y)
+            c2+=1;
+        }
+        if(c1>c2)
+        return x;
+        else if(c1<c2)
+        return y;
+        else
+        return Math.min(x,y);
+    }
+}
