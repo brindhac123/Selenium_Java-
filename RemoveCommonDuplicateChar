@@ -1,0 +1,32 @@
+package javapac;
+import java.util.*;
+public class RemoveCommonDuplicateChar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Scanner sc=new Scanner(System.in);
+	String s1=sc.nextLine(),s2=sc.nextLine();
+	HashSet set1=new HashSet<>();
+	HashSet set2=new HashSet<>();
+	
+	StringBuilder sb1=new StringBuilder();
+	StringBuilder sb2=new StringBuilder();
+	for(char a:s1.toCharArray()) {
+		set1.add(a);
+	}
+	for(char a:s2.toCharArray()) {
+		set2.add(a);
+	}
+	HashSet com=new HashSet<>(set1);
+	com.retainAll(set2);
+	for(char a:s1.toCharArray()) {
+		if(!com.contains(a))
+		sb1.append(a);
+	}
+	for(char a:s2.toCharArray()) {
+		if(!com.contains(a))
+			sb2.append(a);
+	}
+	System.out.println(sb1+" set 2"+sb2);
+	}
+}
