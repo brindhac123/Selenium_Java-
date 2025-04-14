@@ -1,0 +1,21 @@
+package javapac;
+import java.util.*;
+public class ShortestStringLength {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s1=sc.nextLine();
+		String arr[]=s1.split(" ");
+		String min=arr[0];
+		String max=arr[0];
+		for(String word:arr) {
+			if(min.length()>word.length())
+				min=word;
+			else if(max.length()<word.length())
+				max=word;
+		}
+		System.out.println(min +" "+max);
+	}
+
+}
