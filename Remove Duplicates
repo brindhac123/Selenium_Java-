@@ -1,0 +1,14 @@
+class Solution {
+    String removeDups(String s) {
+        // code here
+        LinkedHashSet<Character> cha=new LinkedHashSet<>();
+        for(char a:s.toCharArray() ){
+            cha.add(a);
+        }
+        StringBuilder sb=new StringBuilder();
+        for(char a: cha){
+            sb.append(a);
+        }
+        return sb.toString();
+    }
+}
