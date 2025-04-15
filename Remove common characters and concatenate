@@ -1,0 +1,29 @@
+class Solution
+{
+    //Function to remove common characters and concatenate two strings.
+    public static String concatenatedString(String s1,String s2)
+    {
+        // Your code here
+        Set<Character> st1=new HashSet<>();
+        Set<Character> st2=new HashSet<>();
+        for(char a: s1.toCharArray()){
+            st1.add(a);
+        }
+        for(char a: s2.toCharArray()){
+            st2.add(a);
+        }
+        Set<Character> common=new HashSet<>(st1);
+        StringBuilder sb=new StringBuilder();
+        common.retainAll(st2);
+        for(char a:s1.toCharArray()){
+            if(!common.contains(a))
+            sb.append(a);
+        }
+        for(char a:s2.toCharArray()){
+            if(!common.contains(a))
+            sb.append(a);
+        }
+        return sb.length()==0 ? "-1" : sb.toString();
+        
+    }
+}
