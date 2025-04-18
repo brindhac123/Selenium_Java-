@@ -1,0 +1,15 @@
+class Solution {
+    public String convert(String s) {
+        // code here
+        String val[]= s.split("\\s+");
+        StringBuilder sb=new StringBuilder();
+        //if(s.length()>1){
+        for(String arr:val){
+           String w=arr;
+           arr=Character.toUpperCase(w.charAt(0))+w.substring(1)+" ";
+           sb.append(arr);
+       // }
+        }
+        return sb.toString();
+    }
+}
