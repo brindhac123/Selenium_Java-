@@ -1,0 +1,17 @@
+package javapac;
+
+import org.testng.annotations.*;
+
+public class TestNG1 {
+	
+		@BeforeTest
+		public void a() {
+			System.out.println("Before Check Running first testng pgm");
+		
+	}
+		@Test
+		public void b() {
+			System.out.println("test checking");
+		}
+
+}
