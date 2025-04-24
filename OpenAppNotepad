@@ -1,0 +1,23 @@
+package javapac;
+import java.io.IOException;
+import java.util.*;
+public class OpenAppNotepad {
+
+	//@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Runtime rc=Runtime.getRuntime();
+		try {
+			rc.exec("notepad");
+			rc.exec("calc");
+			rc.exec("cmd /c dir"); 
+		}
+		catch(IOException e){
+			System.out.println("There is error open");
+		}
+		finally {
+			System.out.println("completed");
+		}
+	}
+
+}
