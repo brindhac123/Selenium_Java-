@@ -1,0 +1,54 @@
+package javapac;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DragAndDrop {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		 System.setProperty("webdriver.chrome.driver", 
+		            "C:\\Users\\brind.LAPTOP-FD6SDTLA\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+
+		 WebDriver driver = new ChromeDriver();
+		 driver.get("http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html");
+		 driver.manage().window().maximize();
+		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 JavascriptExecutor js= (JavascriptExecutor) driver;
+		 Thread.sleep(2000);
+		 js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+		 //js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+		 WebElement SourceElement = driver.findElement(By.xpath("//div[@id='box5']"));
+WebElement TargetElement =driver.findElement(By.xpath("//div[@id='box105']"));
+WebElement SourceElement1 = driver.findElement(By.xpath("//div[@id='box1']"));
+WebElement TargetElement1 =driver.findElement(By.xpath("//div[@id='box101']"));
+WebElement SourceElement2 = driver.findElement(By.xpath("//div[@id='box2']"));
+WebElement TargetElement2 =driver.findElement(By.xpath("//div[@id='box102']"));
+WebElement SourceElement3 = driver.findElement(By.xpath("//div[@id='box3']"));
+WebElement TargetElement3 =driver.findElement(By.xpath("//div[@id='box103']"));
+WebElement SourceElement4 = driver.findElement(By.xpath("//div[@id='box4']"));
+WebElement TargetElement4 =driver.findElement(By.xpath("//div[@id='box104']"));
+WebElement SourceElement5 = driver.findElement(By.xpath("//div[@id='box6']"));
+WebElement TargetElement5 =driver.findElement(By.xpath("//div[@id='box106']"));
+WebElement SourceElement6 = driver.findElement(By.xpath("//div[@id='box7']"));
+WebElement TargetElement6 =driver.findElement(By.xpath("//div[@id='box107']"));
+Thread.sleep(2000);
+Actions act=new Actions(driver);
+act.dragAndDrop(SourceElement,TargetElement).perform();
+act.dragAndDrop(SourceElement1,TargetElement1).perform();
+act.dragAndDrop(SourceElement2,TargetElement2).perform();
+act.dragAndDrop(SourceElement3,TargetElement3).perform();
+act.dragAndDrop(SourceElement4,TargetElement4).perform();
+act.dragAndDrop(SourceElement5,TargetElement5).perform();
+act.dragAndDrop(SourceElement6,TargetElement6).perform();
+driver.manage().deleteAllCookies();
+driver.quit();
+}
+
+}
