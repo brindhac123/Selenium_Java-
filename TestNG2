@@ -1,0 +1,35 @@
+package javapac;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+
+public class TestNG2 {
+	WebDriver driver;
+	@BeforeTest
+	public void setup() {
+		System.setProperty("webdriver.chrome.driver", 
+	            "C:\\Users\\brind.LAPTOP-FD6SDTLA\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+
+	 WebDriver driver = new ChromeDriver();
+	 driver.manage().window().maximize();
+	 driver.get("https://www.saucedemo.com");	 
+	 }
+	@Test
+	 public void login1() {
+		
+	        WebElement usernameField = driver.findElement(By.xpath("//input[@id='user-name']"));
+	        usernameField.sendKeys("standard_user");
+
+	        // Locate the password field using XPath and enter the password
+	        WebElement passwordField = driver.findElement(By.xpath("//input[@id='password']"));
+	        passwordField.sendKeys("secret_sauce");
+
+	        // Locate the login button using XPath and click it
+	        WebElement loginButton = driver.findElement(By.xpath("//input[@id='login-button']"));
+	        loginButton.click();
+	}
+
+}
