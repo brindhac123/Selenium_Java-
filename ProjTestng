@@ -1,0 +1,16 @@
+package testNG;
+
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+
+public class ProjTestng {
+	@Test 
+	public void a() {
+		AssertJUnit.assertTrue(10<100);
+		System.out.println("A Method");
+	}
+	@Test (dependsOnMethods="a")
+	public void b() {
+		System.out.println("B Method");
+	}
+}
