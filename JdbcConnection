@@ -1,0 +1,51 @@
+package seleniumpracticeprogram;
+import java.sql.*;
+public class JdbcConnection {
+
+	public static void main(String[] args) throws SQLException {
+	readRecords();
+	insertRecords();
+		}
+public static void readRecords() throws SQLException{
+	String url="jdbc:mysql://localhost:3306/employee";
+	String uname="root";
+	String pass="123456";
+	String query = "select * from employee";
+	Connection con=DriverManager.getConnection(url,uname,pass);
+	Statement st=con.createStatement();
+	ResultSet rs=st.executeQuery(query);
+	while(rs.next()) {
+	System.out.println("Id:"+rs.getInt(1));
+	System.out.println("Id:"+rs.getString(2));
+	System.out.println("Id:"+rs.getString(3));
+}
+	con.close();
+}
+public static void insertRecords() throws SQLException{
+	String url="jdbc:mysql://localhost:3306/employee";
+	String uname="root";
+	String pass="123456";
+	String query = "insert into employee values(5,'Sanjay','Employee')";
+	Connection con=DriverManager.getConnection(url,uname,pass);
+	Statement st=con.createStatement();
+	int rows=st.executeUpdate(query);
+	System.out.println("Number of rows:"+rows);
+	con.close();
+}
+public static void insertRecords1() throws SQLException{
+	String url="jdbc:mysql://localhost:3306/employee";
+	String uname="root";
+	String pass="123456";
+	int id=5;
+	String name="Mukesh";
+	String job="Employer";
+	//String query = "insert into employee values(5,'Sanjay','Employee')";
+	String query = "insert into employee values("+id+",'"+name+"',"+"'"+job+"')";
+	Connection con=DriverManager.getConnection(url,uname,pass);
+	Statement st=con.createStatement();
+	int rows=st.executeUpdate(query);
+	System.out.println("Number of rows:"+rows);
+	con.close();
+}
+
+}
