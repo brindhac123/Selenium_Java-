@@ -1,0 +1,31 @@
+package javapackage;
+
+public class Static1 {
+
+	int a=10;
+	static int b=20;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int c=30;
+		add();
+		Static1 st=new Static1();
+		st.add();
+		st.add1();
+		b=5000;
+		System.out.println(st.a+" "+b+" "+st.b+" "+c);
+		System.out.println(c>b);
+		Object[] s= {1,2,"pariksith",34};
+		Object[] s1= {};
+		int d = 0;
+		String s2 = null;
+		System.out.println(s1+" "+d+" "+s2+" " );
+		
+	}
+	public static void add() {
+		System.out.println("static method");
+	}
+	public void add1() {
+		System.out.println("non static method");
+	}
+
+}
