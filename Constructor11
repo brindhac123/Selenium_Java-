@@ -1,0 +1,13 @@
+package javapackage;
+
+public class Constructor1 {
+ int rollno;
+ String name;
+ Constructor1(int r,String n){
+	 rollno=r;
+	 name=n;
+ }
+ public void display() {
+	 System.out.println("Roll No: "+rollno+" Name: "+name);
+ }
+}
