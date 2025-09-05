@@ -1,0 +1,30 @@
+package javapac;
+
+class Interest {
+void interest() {
+	System.out.println("Showing the Rate of interest of banks");
+}
+}
+class iob extends Interest{
+	void interest() {
+		System.out.println("IOB");
+	}
+}
+class canara extends Interest{
+	void interest() {
+		System.out.println("Canara");
+	}
+}
+public class MethodOverriding100 extends Interest{
+	void interest() {
+		System.out.println("statebank");
+	}
+	public static void main(String[] args) {
+		MethodOverriding100 m=new MethodOverriding100();
+		//st ob=new st();
+		canara c=new canara();
+		c.interest();
+		iob i=new iob();
+		i.interest();
+	}
+}
