@@ -1,0 +1,21 @@
+package javapac;
+
+public class Recursion {
+	
+	public int recursion(int sum) {
+		//int sum=0;
+		if(sum==1) {
+			return sum;
+		}
+		else 
+		return sum*recursion(sum-1);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Recursion r=new Recursion();
+		int k=r.recursion(10);
+		System.out.println(k);
+	}
+
+}
