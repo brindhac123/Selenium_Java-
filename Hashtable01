@@ -1,0 +1,28 @@
+package javapac;
+import java.util.*;
+public class Hashtable01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Hashtable<Integer,String> ht=new Hashtable<>();
+		ht.put(1, "Car");
+		ht.put(2, "Bus");
+		ht.put(3, "Cycle");
+		ht.put(4, "Train");
+		ht.put(5, "Flight");
+		ht.put(6, "Ship");
+		System.out.println(ht.get(3));
+		System.out.println(ht.containsKey(4)+ " "+ht.containsValue(2));
+		for(Map.Entry<Integer, String> m :ht.entrySet()) {
+			System.out.println(m.getValue() + " "+ m.getKey());
+			//System.out.println();
+		}
+		ht.put(7,"boat");
+		ht.remove(3);
+		for(Map.Entry<Integer, String> m :ht.entrySet()) {
+			System.out.println(m.getValue() + " "+ m.getKey());
+			//System.out.println();
+		}
+	}
+
+}
