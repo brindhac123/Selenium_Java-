@@ -1,0 +1,19 @@
+| Feature             | **HashMap**                           | **LinkedHashMap**                | **TreeMap**                                | **Hashtable**                   | **HashSet**                  |
+| ------------------- | ------------------------------------- | -------------------------------- | ------------------------------------------ | ------------------------------- | ---------------------------- |
+| **Type**            | Map (key-value)                       | Map (key-value)                  | Map (key-value)                            | Map (key-value)                 | Set (only values)            |
+| **Ordering**        | No order                              | Maintains **insertion order**    | **Sorted order of keys**                   | No order                        | No order                     |
+| **Duplicates**      | No duplicate keys (values can repeat) | Same as HashMap                  | Same as HashMap                            | Same as HashMap                 | No duplicate elements        |
+| **Null Handling**   | 1 null key, multiple null values      | 1 null key, multiple null values | ❌ Null key not allowed, allows null values | ❌ Null key, ❌ Null value        | 1 null element allowed       |
+| **Synchronization** | ❌ Not synchronized                    | ❌ Not synchronized               | ❌ Not synchronized                         | ✅ Synchronized                  | ❌ Not synchronized           |
+| **Performance**     | Fast (O(1) for get/put)               | Slightly slower than HashMap     | Slower (O(log n) for get/put)              | Slower (due to synchronization) | Fast (O(1) for add/contains) |
+| **Use Case**        | General-purpose key-value store       | When order of insertion matters  | When sorted keys are needed                | When thread-safety is required  | Store unique values          |
+
+HashMap → Fast, no order
+
+LinkedHashMap → HashMap + Order
+
+TreeMap → HashMap + Sorting
+
+Hashtable → HashMap + Thread-safety (but no nulls)
+
+HashSet → Just keys, no duplicates
