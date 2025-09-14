@@ -1,0 +1,23 @@
+package javapac;
+
+import java.util.*;
+
+public class TreeMap01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<Integer, String> hm= new TreeMap<>();
+		hm.put(1, "Sambar");
+		hm.put(2, "Curd");
+		hm.put(6, "Egg");
+		hm.put(3, "Briyani");
+		hm.put(4, "termind");
+		hm.put(5, "lemon");
+		System.out.println(hm.get(2));
+		for(Map.Entry<Integer, String> mp : hm.entrySet()) {
+			System.out.println(mp.getValue());
+		}
+		
+	}
+
+}
