@@ -1,0 +1,31 @@
+package javapac;
+
+import java.util.*;
+
+public class LinkedList01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList<Integer> ar=new LinkedList<>();
+		ar.add(10);
+		ar.add(20);
+		ar.add(30);
+		ar.add(40);
+		ar.add(10);
+		ar.add(50);
+		ar.add(70);
+		//System.out.println(ar.get(4));
+		ar.add(100);
+		System.out.println(ar.get(7));
+		ar.set(7, 807);
+		for(int k:ar) {
+			System.out.println(k);
+		}
+		ar.add(0,5);
+		/*
+		 * for(int k:ar) { System.out.println(k); }
+		 */
+		ar.remove(4);
+	}
+
+}
