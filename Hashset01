@@ -1,0 +1,19 @@
+package javapac;
+import java.util.*;
+public class Hashset01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+HashSet<String> hs=new HashSet<>();
+hs.add("apple");
+hs.add("banana");
+hs.add("cherry");
+hs.add("chiko");
+List<String> l=new ArrayList<>(hs);
+System.out.println(l.get(0));
+boolean removed = hs.remove("Mango");
+for(String mp : hs) {
+	System.out.println(mp);
+}
+	}
+	 }
