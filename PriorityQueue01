@@ -1,0 +1,24 @@
+package javapac;
+import java.util.*;
+public class PriorityQueue01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PriorityQueue<String> pq=new PriorityQueue<>();
+		pq.add("Brindha");
+		pq.add("VelMurugan");
+		pq.add("Pariksith");
+		pq.add("Sanjay");
+		pq.add("Mukesh");
+		pq.add("Kala");
+		pq.add("Yaalini");
+		System.out.println(pq.element());
+		System.out.println(pq.peek());
+		System.out.println(pq.poll());
+		Iterator itr=pq.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+	}
+
+}
