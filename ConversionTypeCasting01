@@ -1,0 +1,22 @@
+package javapac;
+
+public class ConversionTypeCasting01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="300";
+		//string to int
+		int i=Integer.parseInt(s);
+		//string to float
+		float f=Float.parseFloat(s);
+		//string to double
+		double d=Double.parseDouble(s);
+		//string to long
+				long l=Long.parseLong(s);
+				//int to string
+				int in=1000;
+				String s1=String.valueOf(in);
+				System.out.println(i+" "+f+" "+d+" "+l+" "+s1+" "+in+" ");
+	}
+
+}
