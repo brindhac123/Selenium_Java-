@@ -1,0 +1,15 @@
+package javapac;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+public class StringDateConvert01 {
+	
+	public static void main(String[] args) throws ParseException {
+		// TODO Auto-generated method stub
+		String d1="15/09/2025";
+		SimpleDateFormat for1=new SimpleDateFormat("dd/MM/yyyy");
+		Date date1=for1.parse(d1);
+		System.out.println(date1);
+	}
+
+}
