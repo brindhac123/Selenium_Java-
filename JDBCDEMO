@@ -1,0 +1,82 @@
+package jdbcpackage;
+
+import java.sql.*;
+
+public class JDBCDEMO {
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		/*
+		 * readRecord(); insertRecord();
+		 */
+		insertRecordpst();
+		
+	}
+
+	public static void readRecord() throws SQLException {
+		String url="jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern="root";
+		String pass="123456";
+		//Connection con=DriverManager.getConnection(url,usern,pass);
+		Connection con=DriverManager.getConnection(url,usern,pass);
+		System.out.println(con);
+		String query="select * from STUDENT";
+		Statement st=con.createStatement();
+		ResultSet rs=st.executeQuery(query);
+		while(rs.next()) {
+		System.out.println("id "+rs.getInt(1));
+		System.out.println("name "+rs.getString(2));
+		System.out.println("mark "+rs.getInt(3));
+		}
+	}
+	public static void insertRecord() throws SQLException {
+		String url = "jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern = "root";
+		String pass = "123456";
+		// Connection con=DriverManager.getConnection(url,usern,pass);
+		Connection con = DriverManager.getConnection(url, usern, pass);
+		System.out.println(con);
+		//String query = "insert into student values(5,'priya',9)";
+		int id=6;
+		String name="Bhuvan";
+		int gpa=6;
+		String query = "insert into student values("+id+",'"+name+"',"+gpa+")";
+		Statement st = con.createStatement();
+		int noRow = st.executeUpdate(query);
+		System.out.println(noRow);
+	}
+	public static void insertRecordpst() throws SQLException {
+		String url = "jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern = "root";
+		String pass = "123456";
+		// Connection con=DriverManager.getConnection(url,usern,pass);
+		Connection con = DriverManager.getConnection(url, usern, pass);
+		System.out.println(con);
+		//String query = "insert into student values(5,'priya',9)";
+		int id=7;
+		String name="VArun";
+		int gpa=6;
+		String query = "insert into student values(?,?,?)";
+		PreparedStatement pt = con.prepareStatement(query);
+		pt.setInt(1, id);
+		pt.setString(2, name);
+		pt.setInt(3, gpa);
+		int noRow = pt.executeUpdate();
+		System.out.println(noRow);
+	}
+	public static void deleteRecord() throws SQLException {
+		String url = "jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern = "root";
+		String pass = "123456";
+		// Connection con=DriverManager.getConnection(url,usern,pass);
+		Connection con = DriverManager.getConnection(url, usern, pass);
+		System.out.println(con);
+		//String query = "insert into student values(5,'priya',9)";
+		int id=5;
+		
+		String query = "delete from employee where id ="+id;
+		Statement st = con.createStatement();
+		int noRow = st.executeUpdate(query);
+		System.out.println(noRow);
+
+}
