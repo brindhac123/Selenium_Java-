@@ -1,0 +1,44 @@
+select * from employee;
+
+create database jdbcdemo;
+
+use jdbcdemo
+
+CREATE TABLE EMPLOYEE_D(
+emp_id int PRIMARY KEY,
+ename VARCHAR(30),
+salary int
+);
+insert into EMPLOYEE_D values(1, "kaviya",100);
+select * from EMPLOYEE_D;
+CREATE TABLE STUDENT(
+id INT PRIMARY KEY,
+name varchar(20),
+gpa int);
+use student;
+insert into STUDENT values(1, "kaviya",8.5);
+insert into STUDENT values(2, "Aarthi",9.2);insert into STUDENT values(3, "Ashwin",7.6);
+insert into STUDENT values(4, "Balaji",8.1);
+
+select * from student;
+
+DELIMITER $$
+CREATE PROCEDURE GetStu()
+BEGIN
+    SELECT * FROM student;
+END $$
+DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE GetStuById(In sid int)
+BEGIN
+    SELECT * FROM student where id=sid;
+END $$
+DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE GetNameById(In sid int,Out sname varchar(20))
+BEGIN
+    SELECT name FROM student where id=sid into sname;
+END $$
+DELIMITER ;
