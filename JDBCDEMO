@@ -9,7 +9,7 @@ public class JDBCDEMO {
 		/*
 		 * readRecord(); insertRecord();
 		 */
-		insertRecordpst();
+		sp3();
 		
 	}
 
@@ -74,9 +74,65 @@ public class JDBCDEMO {
 		//String query = "insert into student values(5,'priya',9)";
 		int id=5;
 		
-		String query = "delete from employee where id ="+id;
+		String query = "delete from student where id ="+id;
 		Statement st = con.createStatement();
 		int noRow = st.executeUpdate(query);
 		System.out.println(noRow);
-
+	}
+	public static void updateRecord() throws SQLException {
+		String url = "jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern = "root";
+		String pass = "123456";
+		Connection con = DriverManager.getConnection(url, usern, pass);
+		
+		String query = "update student set gpa=2 where id =4";
+		Statement st = con.createStatement();
+		int noRow = st.executeUpdate(query);
+		System.out.println(noRow);
+		con.close();
+	}
+	public static void sp() throws SQLException {
+		String url="jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern="root";
+		String pass="123456";
+		//Connection con=DriverManager.getConnection(url,usern,pass);
+		Connection con=DriverManager.getConnection(url,usern,pass);
+		CallableStatement cst=con.prepareCall("{call GetStu()}");
+		ResultSet rs=cst.executeQuery();
+		//String query="select * from STUDENT";
+		
+		while(rs.next()) {
+		System.out.println("id "+rs.getInt(1));
+		System.out.println("name "+rs.getString(2));
+		System.out.println("mark "+rs.getInt(3));
+		}
+	}
+	public static void sp2() throws SQLException {
+		String url="jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern="root";
+		String pass="123456";
+		int id=2;
+		Connection con=DriverManager.getConnection(url,usern,pass);
+		CallableStatement cst=con.prepareCall("{call GetStuById(?)}");
+		cst.setInt(1,id);
+		ResultSet rs=cst.executeQuery();
+		while(rs.next()) {
+		System.out.println("id "+rs.getInt(1));
+		System.out.println("name "+rs.getString(2));
+		System.out.println("mark "+rs.getInt(3));
+		}
+	}
+	public static void sp3() throws SQLException {
+		String url="jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern="root";
+		String pass="123456";
+		int id=2;
+		Connection con=DriverManager.getConnection(url,usern,pass);
+		CallableStatement cst=con.prepareCall("{call GetNameById(?,?)}");
+		cst.setInt(1,id);
+		cst.registerOutParameter(2, Types.VARCHAR);
+		cst.executeUpdate();
+		System.out.println(cst.getString(2));
+		con.close();
+	}
 }
