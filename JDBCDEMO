@@ -9,7 +9,7 @@ public class JDBCDEMO {
 		/*
 		 * readRecord(); insertRecord();
 		 */
-		sp3();
+		batchdemo();
 		
 	}
 
@@ -126,7 +126,7 @@ public class JDBCDEMO {
 		String url="jdbc:mysql://localhost:3306/jdbcdemo";
 		String usern="root";
 		String pass="123456";
-		int id=2;
+		int id=4;
 		Connection con=DriverManager.getConnection(url,usern,pass);
 		CallableStatement cst=con.prepareCall("{call GetNameById(?,?)}");
 		cst.setInt(1,id);
@@ -135,4 +135,48 @@ public class JDBCDEMO {
 		System.out.println(cst.getString(2));
 		con.close();
 	}
+	public static void commit() throws SQLException {
+		String url="jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern="root";
+		String pass="123456";
+		String query1="update student set gpa=4 where id=1";
+		String query2="update student set gpa=4 where id=2";
+		Connection con=DriverManager.getConnection(url,usern,pass);
+		con.setAutoCommit(false);
+		Statement st=con.createStatement();
+		int rs1=st.executeUpdate(query1);
+		int rs2=st.executeUpdate(query2);
+		System.out.println(rs1+" "+rs2);
+		  if(rs1>0 && rs2>0) 
+			  con.commit();
+		con.close();
+	}
+	public static void batchdemo() throws SQLException {
+		String url="jdbc:mysql://localhost:3306/jdbcdemo";
+		String usern="root";
+		String pass="123456";
+		String query1="update student set gpa=5 where id=1";
+		String query2="update student set gpa=5 where id=2";
+		String query3="update student set gpa=5 where id=3";
+		String query4="update student set gpa=5 where id=4";
+		Connection con=DriverManager.getConnection(url,usern,pass);
+		con.setAutoCommit(false);
+		Statement st=con.createStatement();
+		st.addBatch(query1);
+		st.addBatch(query2);
+		st.addBatch(query3);
+		st.addBatch(query4);
+		int res[]=st.executeBatch();
+		
+		  for(int i:res) { 
+			  if(i>0) 
+				  continue; 
+			  else 
+				  con.rollback();
+			  }
+		  con.commit();
+		 
+		con.close();
+	}
+
 }
