@@ -1,5 +1,5 @@
 select * from employee;
-
+select * from student;
 create database jdbcdemo;
 
 use jdbcdemo
@@ -20,7 +20,7 @@ insert into STUDENT values(1, "kaviya",8.5);
 insert into STUDENT values(2, "Aarthi",9.2);insert into STUDENT values(3, "Ashwin",7.6);
 insert into STUDENT values(4, "Balaji",8.1);
 
-select * from student;
+ 
 
 DELIMITER $$
 CREATE PROCEDURE GetStu()
@@ -42,3 +42,27 @@ BEGIN
     SELECT name FROM student where id=sid into sname;
 END $$
 DELIMITER ;
+
+
+create database busresv;
+use busresv;
+create table bus (
+id int primary key,
+ac boolean,
+capacity int
+);
+insert into bus values(1,1,2);
+insert into bus values(2,1,20);
+insert into bus values(3,0,40);
+
+select * from bus;
+
+create table booking(
+passenger_name varchar(50),
+bus_no int,
+travel_date date 
+); 
+
+select * from booking
+
+update booking set passenger_name='Parksith' where passenger_name='1';
