@@ -1,0 +1,18 @@
+package jdbcpackage;
+
+import java.sql.*;
+
+public class JdbcInsert {
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","123456");
+		PreparedStatement pst=con.prepareStatement("insert into demo values(?,?,?)");
+		pst.setInt(1, 5);
+		pst.setString(2, "VINISHA");
+		pst.setInt(3, 22);
+		int rs=pst.executeUpdate();
+		System.out.println(rs);
+	}
+
+}
