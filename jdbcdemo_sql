@@ -66,3 +66,26 @@ travel_date date
 select * from booking
 
 update booking set passenger_name='Parksith' where passenger_name='1';
+
+create database jdbc;
+use jdbc;
+
+create table demo(
+id int primary key,
+name varchar(50),
+age int
+);
+
+insert into demo values(1,"Brindha",25);
+insert into demo values(2,"Velu",28);
+insert into demo values(3,"Parik",1);
+
+select * from demo;
+
+DELIMiTER //
+CREATE PROCEDURE get_demo()
+Begin
+select * from demo;
+End//
+DELIMITER ; 
+
