@@ -1,0 +1,31 @@
+package javapac;
+
+class table{
+	synchronized void mul(int n) {
+		for(int i=1;i<=5;i++) {
+			System.out.println(i*n);
+			try {Thread.sleep(2);} catch (InterruptedException e) {}
+		}
+	}
+}
+public class ThreadClass01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		table t=new table();
+		Thread t1=new Thread() {
+			public void run() {
+				t.mul(5);
+			}
+		};
+		Thread t2=new Thread() {
+			public void run() {
+				t.mul(10);
+			}
+		};
+t1.start();
+t2.start();
+		
+	}
+
+}
