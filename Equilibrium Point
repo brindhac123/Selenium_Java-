@@ -1,0 +1,19 @@
+class Solution {
+    // Function to find equilibrium point in the array.
+    public static int findEquilibrium(int arr[]) {
+        // code here
+        int total_sum=0,left_sum=0,right_sum;
+        for(int a:arr){
+            total_sum+=a;
+        }
+        for(int i=0;i<arr.length;i++){
+            right_sum=total_sum-left_sum-arr[i];
+            
+            if(right_sum==left_sum)
+            return i;
+            
+            left_sum+=arr[i];
+        }
+        return -1;
+    }
+}
